@@ -13,7 +13,7 @@ chrome.action.onClicked.addListener(async (tab) => {
   }
 
   try {
-    console.log("Sending message to tab:", tab.id);
+    console.log("Sending toggleSidebar message to tab:", tab.id);
     const response = await chrome.tabs.sendMessage(tab.id, {
       action: "toggleSidebar",
     });

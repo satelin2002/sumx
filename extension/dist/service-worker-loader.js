@@ -1,1 +1,1 @@
-import './background.js';
+import './assets/background-DkDK8cFV.js';

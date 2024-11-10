@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add some debug styles */
+#sumx-sidebar-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2147483647;
+}

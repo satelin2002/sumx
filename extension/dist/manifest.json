@@ -25,15 +25,15 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.ts-loader.js"
+        "assets/index.ts-loader-DvhIum96.js"
       ],
       "matches": [
         "<all_urls>"
       ],
+      "run_at": "document_end",
       "css": [
-        "styles/sidebar.css"
-      ],
-      "run_at": "document_end"
+        "assets/content-y8BOUQg2.css"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -42,7 +42,7 @@
         "<all_urls>"
       ],
       "resources": [
-        "content.js"
+        "assets/content-DiGQxVwG.js"
       ],
       "use_dynamic_url": false
     }
