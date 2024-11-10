@@ -22,5 +22,13 @@
       "js": ["src/content/index.ts"],
       "run_at": "document_end"
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap"
+      ],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
