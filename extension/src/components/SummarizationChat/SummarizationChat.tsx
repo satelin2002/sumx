@@ -34,7 +34,7 @@ export const SummarizationChat = ({
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full antialiased">
       {/* Header */}
       <div className="flex items-center justify-between px-2 h-14 border-b border-gray-800">
         <div className="flex items-center">
@@ -122,7 +122,7 @@ export const SummarizationChat = ({
             className="min-h-[104px] max-h-[208px] pb-16 px-4 pt-4 resize-y bg-gray-800 
               border-[1.5px] border-gray-700 text-white placeholder-gray-400 rounded-lg
               focus:border-[2px] focus:border-indigo-500 focus:ring-0
-              transition-all duration-200 font-sans text-[15px]
+              transition-all duration-200 font-sans text-[15px] antialiased
               scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
               block w-full"
             style={{

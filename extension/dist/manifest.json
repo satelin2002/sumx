@@ -25,14 +25,14 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.ts-loader-Cvi0V6RM.js"
+        "assets/index.ts-loader-CPUkFnCW.js"
       ],
       "matches": [
         "<all_urls>"
       ],
       "run_at": "document_end",
       "css": [
-        "assets/content-C3FOJO6U.css"
+        "assets/content-D-spMJa1.css"
       ]
     }
   ],
@@ -43,7 +43,7 @@
       ],
       "resources": [
         "https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap",
-        "assets/content-BXZnbzkT.js"
+        "assets/content-BLRogPPA.js"
       ],
       "use_dynamic_url": false
     }

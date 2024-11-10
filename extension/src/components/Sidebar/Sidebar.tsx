@@ -15,7 +15,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
   return (
     <div
       className={`fixed top-4 bottom-4 h-[calc(100vh-32px)] w-[420px] transition-all duration-300 ease-in-out z-[9999] overflow-hidden
-        rounded-xl border border-gray-200/20 shadow-2xl bg-[#0A0A0A]/95 backdrop-blur-sm
+        rounded-xl border border-gray-200/20 shadow-2xl bg-[#0A0A0A]/95 backdrop-blur-sm antialiased
         ${isVisible ? "right-4" : "-right-[420px]"}`}
     >
       {currentView === "chat" ? (
@@ -25,7 +25,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
         />
       ) : (
         <ScrollArea className="h-full">
-          <div className="flex flex-col p-8 pt-16">
+          <div className="flex flex-col p-8 pt-16 antialiased">
             <div className="space-y-10">
               {/* Hero Section with Logo */}
               <div className="space-y-6">
@@ -35,11 +35,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
                   className="h-5"
                 />
                 <div className="space-y-3">
-                  <H1 className="text-2xl font-bold tracking-tight text-white">
+                  <H1 className="text-2xl font-bold tracking-tight text-white antialiased">
                     Summarize, search & write,{" "}
                     <span className="text-gray-400">anywhere, anytime</span>
                   </H1>
-                  <P className="text-base text-gray-400">
+                  <P className="text-base text-gray-400 antialiased">
                     SumX helps you extract key insights from PDFs and web pages
                     instantly, powered by AI.
                   </P>
@@ -50,7 +50,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="text-xl">🚀</span>
-                  <Large className="text-base font-normal text-gray-300">
+                  <Large className="text-base font-normal text-gray-300 antialiased">
                     <span className="underline font-semibold">
                       One-click summaries
                     </span>{" "}
@@ -59,7 +59,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-xl">✨</span>
-                  <Large className="text-base font-normal text-gray-300">
+                  <Large className="text-base font-normal text-gray-300 antialiased">
                     <span className="underline font-semibold">
                       Smart highlighting
                     </span>{" "}
@@ -68,7 +68,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-xl">📊</span>
-                  <Large className="text-base font-normal text-gray-300">
+                  <Large className="text-base font-normal text-gray-300 antialiased">
                     <span className="underline font-semibold">
                       Customize length
                     </span>{" "}
@@ -78,7 +78,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
               </div>
 
               {/* Sign In Buttons */}
-              <div className="space-y-3">
+              <div className="space-y-3 antialiased">
                 <Button
                   className="w-full py-5 text-base rounded-lg bg-white hover:bg-gray-100 text-black font-normal transition-all"
                   size="lg"
