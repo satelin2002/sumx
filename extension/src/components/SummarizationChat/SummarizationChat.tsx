@@ -2,15 +2,7 @@ import React, { useState, useRef } from "react";
 import { ScrollArea } from "../ui/scroll-area";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
-import {
-  ArrowLeft,
-  Send,
-  Upload,
-  Globe,SumX Chat
-  Paperclip,
-  RotateCcw,
-  X,
-} from "lucide-react";
+import { ArrowLeft, Send, Upload, Globe, X, Paperclip } from "lucide-react";
 import { H2, H3, P, Large } from "../ui/typography";
 
 interface Message {
@@ -69,7 +61,7 @@ export const SummarizationChat = ({
             className="hover:bg-gray-800"
             title="Reset conversation"
           >
-            <RotateCcw className="h-4 w-4 text-gray-400" />
+            <X className="h-4 w-4 text-gray-400" />
           </Button>
           <Button
             variant="ghost"
@@ -107,7 +99,7 @@ export const SummarizationChat = ({
                 <div
                   className={`max-w-[80%] rounded-lg p-3 ${
                     message.role === "user"
-                      ? "bg-purple-600 text-white"
+                      ? "bg-indigo-600 text-white"
                       : "bg-gray-800 text-gray-100"
                   }`}
                 >
@@ -127,61 +119,51 @@ export const SummarizationChat = ({
             value={input}
             onChange={handleInput}
             placeholder="Message SumX..."
-            className="min-h-[52px] max-h-[156px] pb-14 resize-y bg-gray-800 
-              border-gray-700 text-white placeholder-gray-400 rounded-lg
-              focus:border-purple-500 focus:ring-1 focus:ring-purple-500
+            className="min-h-[104px] max-h-[208px] pb-16 px-4 pt-4 resize-y bg-gray-800 
+              border-[1.5px] border-gray-700 text-white placeholder-gray-400 rounded-lg
+              focus:border-[2px] focus:border-indigo-500 focus:ring-0
               transition-all duration-200 font-sans text-[15px]
-              scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"
+              scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
+              block w-full"
             style={{
-              lineHeight: "26px",
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                // Handle send message
-              }
+              lineHeight: "20px",
             }}
           />
-          <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 bg-gray-800">
-            <div className="flex items-center gap-2">
+          <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 bg-gray-800 px-1">
+            <div className="flex items-center gap-3">
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-9 w-9 hover:bg-gray-700"
-                title="Upload PDF"
+                className="h-10 w-10 rounded-full border border-gray-700 hover:bg-gray-700/50
+                  flex items-center justify-center transition-all duration-200"
+                title="Attach PDF"
               >
-                <Upload className="h-5 w-5 text-purple-400" />
+                <Paperclip className="h-[22px] w-[22px] text-indigo-400 stroke-[2.5]" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-9 w-9 hover:bg-gray-700"
+                className="h-10 w-10 rounded-full border border-gray-700 hover:bg-gray-700/50
+                  flex items-center justify-center transition-all duration-200"
                 title="Analyze webpage"
               >
-                <Globe className="h-5 w-5 text-purple-400" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9 hover:bg-gray-700"
-                title="Attach file"
-              >
-                <Paperclip className="h-5 w-5 text-purple-400" />
+                <Globe className="h-[22px] w-[22px] text-indigo-400 stroke-[2.5]" />
               </Button>
             </div>
             <div className="flex-1" />
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 hover:bg-gray-700"
+              className="h-10 w-10 rounded-full border border-gray-700 hover:bg-gray-700/50
+                flex items-center justify-center transition-all duration-200"
               disabled={!input.trim()}
               title="Send message"
             >
-              <Send className="h-5 w-5 text-purple-400" />
+              <Send className="h-[22px] w-[22px] text-indigo-400 stroke-[2.5]" />
             </Button>
           </div>
         </div>
-        <P className="text-xs text-gray-500 mt-2 text-center">
+        <P className="text-xs text-gray-400 mt-2 text-center">
           SumX can make mistakes. Consider checking important information.
         </P>
       </div>

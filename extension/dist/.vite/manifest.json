@@ -6,7 +6,7 @@
     "isEntry": true
   },
   "index.ts-loader.js": {
-    "file": "assets/index.ts-loader-BJ88bYFn.js",
+    "file": "assets/index.ts-loader-Cvi0V6RM.js",
     "src": "index.ts-loader.js"
   },
   "src/background/index.ts": {
@@ -16,12 +16,12 @@
     "isEntry": true
   },
   "src/content/index.ts": {
-    "file": "assets/content-BLUlyfRa.js",
+    "file": "assets/content-BXZnbzkT.js",
     "name": "content",
     "src": "src/content/index.ts",
     "isEntry": true,
     "css": [
-      "assets/content-C7jfd2PD.css"
+      "assets/content-C3FOJO6U.css"
     ]
   }
 }
