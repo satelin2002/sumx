@@ -25,14 +25,14 @@
   "content_scripts": [
     {
       "js": [
-        "assets/index.ts-loader-DvhIum96.js"
+        "assets/index.ts-loader-ggsylH1c.js"
       ],
       "matches": [
         "<all_urls>"
       ],
       "run_at": "document_end",
       "css": [
-        "assets/content-y8BOUQg2.css"
+        "assets/content-DjE4pIJo.css"
       ]
     }
   ],
@@ -42,7 +42,7 @@
         "<all_urls>"
       ],
       "resources": [
-        "assets/content-DiGQxVwG.js"
+        "assets/content-DHFG9A7r.js"
       ],
       "use_dynamic_url": false
     }
