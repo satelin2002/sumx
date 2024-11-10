@@ -1,0 +1,1 @@
+chrome.action.onClicked.addListener(async e=>{if(console.log("Extension icon clicked"),!e.id){console.error("No tab ID found");return}try{console.log("Sending message to tab:",e.id);const o=await chrome.tabs.sendMessage(e.id,{action:"toggleSidebar"});console.log("Response received:",o)}catch(o){console.error("Error sending message:",o)}});
