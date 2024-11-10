@@ -1,111 +1,138 @@
 import React from "react";
-import {
-  X,
-  MousePointerClick,
-  TextSelect,
-  Sliders,
-  Share2,
-  Sparkles,
-} from "lucide-react";
+import { X } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub, FaApple } from "react-icons/fa6";
 import { H1, P, Large } from "../../components/ui/typography";
 import { Button } from "../../components/ui/button";
+import { ScrollArea } from "../../components/ui/scroll-area";
 import "../../styles/globals.css";
 import { SidebarProps } from "./types";
 
 export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
   return (
     <div
-      className={`fixed top-0 h-screen w-[500px] bg-white transition-all duration-300 ease-in-out z-[9999] overflow-y-auto
-        ${isVisible ? "right-0" : "-right-[500px]"}`}
+      className={`fixed top-4 bottom-4 h-[calc(100vh-32px)] w-[420px] transition-all duration-300 ease-in-out z-[9999] overflow-hidden
+        rounded-xl border border-gray-200/20 shadow-2xl bg-gray-900/95 backdrop-blur-sm
+        ${isVisible ? "right-4" : "-right-[420px]"}`}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-100">
-        <div className="flex items-center">
-          <img
-            src="https://vercel.com/mktng/_next/static/media/vercel-logotype-light.700a8d26.svg"
-            alt="Vercel Logo"
-            className="h-5"
-          />
-        </div>
+      {/* Header - Only close button */}
+      <div className="absolute top-0 right-0 p-4 z-10">
         <Button
           variant="ghost"
           size="icon"
           onClick={onClose}
           aria-label="Close sidebar"
+          className="hover:bg-gray-800"
         >
-          <X className="h-5 w-5 text-gray-500" />
+          <X className="h-5 w-5 text-gray-400" />
         </Button>
       </div>
 
-      {/* Center content vertically */}
-      <div className="flex flex-col justify-center h-[calc(100vh-65px)] p-8">
-        <div className="space-y-12">
-          {/* Hero Section */}
-          <div className="space-y-4">
-            <H1 className="text-4xl font-semibold tracking-tight">
-              Go nomad and live anywhere
-            </H1>
-            <P className="text-xl text-gray-600">
-              Nomad List is now Nomads.com, representing the millions of nomads
-              now living and working remotely from around the world, not tied to
-              a single place but making the entire globe their home.
-            </P>
-          </div>
-
-          {/* Features List */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">🚀</span>
-              <Large className="text-xl font-normal">
-                <span className="underline">One-click summaries</span> of any
-                content
-              </Large>
+      {/* Scrollable content */}
+      <ScrollArea className="h-full">
+        <div className="flex flex-col p-8 pt-16">
+          <div className="space-y-10">
+            {/* Hero Section with Logo */}
+            <div className="space-y-6">
+              <img
+                src="https://vercel.com/mktng/_next/static/media/vercel-logotype-dark.e8c0a742.svg"
+                alt="Vercel Logo"
+                className="h-5"
+              />
+              <div className="space-y-3">
+                <H1 className="text-2xl font-bold tracking-tight text-white">
+                  Summarize anything, anywhere
+                </H1>
+                <P className="text-base text-gray-400">
+                  SumX helps you extract key insights from PDFs and web pages
+                  instantly, powered by AI.
+                </P>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✨</span>
-              <Large className="text-xl font-normal">
-                <span className="underline">Smart highlighting</span> for
-                targeted insights
-              </Large>
+            {/* Features List */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🚀</span>
+                <Large className="text-base font-normal text-gray-300">
+                  <span className="underline font-semibold">
+                    One-click summaries
+                  </span>{" "}
+                  of any content
+                </Large>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-xl">✨</span>
+                <Large className="text-base font-normal text-gray-300">
+                  <span className="underline font-semibold">
+                    Smart highlighting
+                  </span>{" "}
+                  for targeted insights
+                </Large>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-xl">📊</span>
+                <Large className="text-base font-normal text-gray-300">
+                  <span className="underline font-semibold">
+                    Customize length
+                  </span>{" "}
+                  and style as needed
+                </Large>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-xl">💫</span>
+                <Large className="text-base font-normal text-gray-300">
+                  <span className="underline font-semibold">
+                    Share summaries
+                  </span>{" "}
+                  with your team
+                </Large>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <span className="text-xl">💬</span>
+                <Large className="text-base font-normal text-gray-300">
+                  <span className="underline font-semibold">
+                    Join our community
+                  </span>{" "}
+                  of power users
+                </Large>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">📊</span>
-              <Large className="text-xl font-normal">
-                <span className="underline">Customize length</span> and style as
-                needed
-              </Large>
-            </div>
+            {/* Sign In Buttons */}
+            <div className="space-y-3">
+              <Button
+                className="w-full py-5 text-base rounded-lg bg-white hover:bg-gray-100 text-black font-normal transition-all"
+                size="lg"
+              >
+                <FcGoogle className="w-5 h-5" />
+                <span className="flex-1 text-center">Continue with Google</span>
+              </Button>
 
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">💫</span>
-              <Large className="text-xl font-normal">
-                <span className="underline">Share summaries</span> with your
-                team
-              </Large>
-            </div>
+              <Button
+                className="w-full py-5 text-base rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-normal transition-all"
+                size="lg"
+              >
+                <FaGithub className="w-5 h-5" />
+                <span className="flex-1 text-center">Continue with GitHub</span>
+              </Button>
 
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">💬</span>
-              <Large className="text-xl font-normal">
-                <span className="underline">Join our community</span> of power
-                users
-              </Large>
+              <Button
+                variant="outline"
+                className="w-full py-5 text-base rounded-lg border-gray-700 hover:border-gray-600 text-gray-300 font-normal transition-all"
+                size="lg"
+              >
+                <FaApple className="w-5 h-5" />
+                <span className="flex-1 text-center">Continue with Apple</span>
+              </Button>
             </div>
-          </div>
-
-          {/* CTA Button */}
-          <div>
-            <Button
-              className="w-full bg-black hover:bg-gray-900 text-white py-6 text-lg rounded-lg"
-              size="lg"
-            >
-              Get Started Now
-            </Button>
           </div>
         </div>
-      </div>
+      </ScrollArea>
     </div>
   );
 };
