@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { X } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaApple } from "react-icons/fa6";
@@ -7,8 +7,26 @@ import { Button } from "../../components/ui/button";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import "../../styles/globals.css";
 import { SidebarProps } from "./types";
+import { SummarizationChat } from "../SummarizationChat/SummarizationChat";
 
 export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
+  const [currentView, setCurrentView] = useState<"home" | "chat">("home");
+
+  if (currentView === "chat") {
+    return (
+      <div
+        className={`fixed top-4 bottom-4 h-[calc(100vh-32px)] w-[420px] transition-all duration-300 ease-in-out z-[9999] overflow-hidden
+        rounded-xl border border-gray-200/20 shadow-2xl bg-gray-900/95 backdrop-blur-sm
+        ${isVisible ? "right-4" : "-right-[420px]"}`}
+      >
+        <SummarizationChat
+          onBack={() => setCurrentView("home")}
+          onClose={onClose}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`fixed top-4 bottom-4 h-[calc(100vh-32px)] w-[420px] transition-all duration-300 ease-in-out z-[9999] overflow-hidden
@@ -50,17 +68,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
               </div>
             </div>
 
-            {/* Features List */}
+            {/* Features List with clickable summarize button */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <Button
+                onClick={() => setCurrentView("chat")}
+                className="w-full flex items-center gap-3 py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all"
+              >
                 <span className="text-xl">🚀</span>
-                <Large className="text-base font-normal text-gray-300">
-                  <span className="underline font-semibold">
-                    One-click summaries
-                  </span>{" "}
-                  of any content
-                </Large>
-              </div>
+                <span className="text-base font-semibold">
+                  Start Summarizing
+                </span>
+              </Button>
 
               <div className="flex items-center gap-3">
                 <span className="text-xl">✨</span>
